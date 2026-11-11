@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Wisata Candi',
       theme: ThemeData(
-        // Pengaturan tema aplikasi sesuai modul Wisata Candi
+        // Pengaturan tema aplikasi 
         appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(color: Colors.deepPurple),
           titleTextStyle: TextStyle(
