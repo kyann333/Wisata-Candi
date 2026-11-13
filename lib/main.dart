@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:wisata_candi/screens/home_screen.dart';
 import 'package:wisata_candi/screens/profile_screen.dart'; // Bisa diganti sign_in_screen.dart jika diperlukan
-
+import 'package:wisata_candi/screens/home_screen.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -29,7 +30,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // Menjadikan ProfileScreen sebagai halaman awal aplikasi (home)
-      home: const ProfileScreen(),
+
+      // home: const ProfileScreen(),
+      home: const HomeScreen(),
+
     );
   }
 }
