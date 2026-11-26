@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-=======
 import 'package:wisata_candi/screens/sign_in_screen.dart';
->>>>>>> 3949607 ( penambahan tombol navigasi, detail dan mekanisme penghubungan)
 import 'package:wisata_candi/widgets/profile_info_item.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -13,25 +10,13 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  // TODO: 1. Deklarasikan variabel yang dibutuhkan
   bool isSignedIn = true;
   String fullName = '';
   String userName = '';
   int favoriteCandiCount = 0;
 
-  // TODO: 5. Implementasi fungsi signIn
-  void signIn() {
-    setState(() {
-      isSignedIn = !isSignedIn;
-    });
-  }
-
-  // TODO: 6. Implementasi fungsi signOut
-  void signOut() {
-    setState(() {
-      isSignedIn = !isSignedIn;
-    });
-  }
+  void signIn() => setState(() => isSignedIn = true);
+  void signOut() => setState(() => isSignedIn = false);
 
   @override
   Widget build(BuildContext context) {
@@ -47,36 +32,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               children: [
-                // TODO: 2. Buat bagian ProfileHeader yang berisi gambar profil
                 Align(
                   alignment: Alignment.topCenter,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 200 - 50),
+                    padding: const EdgeInsets.only(top: 150),
                     child: Stack(
                       alignment: Alignment.bottomRight,
                       children: [
                         Container(
                           decoration: BoxDecoration(
-<<<<<<< HEAD
-                            border: Border.all(color: Colors.deepPurple, width: 2),
-=======
                             border: Border.all(
                               color: Colors.deepPurple,
                               width: 2,
                             ),
->>>>>>> 3949607 ( penambahan tombol navigasi, detail dan mekanisme penghubungan)
                             shape: BoxShape.circle,
                           ),
                           child: const CircleAvatar(
                             radius: 50,
-<<<<<<< HEAD
-                            backgroundImage:
-                                AssetImage('images/placeholder_image.png'),
-=======
-                            backgroundImage: AssetImage(
-                              'images/placeholder_image.png',
-                            ),
->>>>>>> 3949607 ( penambahan tombol navigasi, detail dan mekanisme penghubungan)
+                            child: Icon(Icons.person, size: 56),
                           ),
                         ),
                         if (isSignedIn)
@@ -94,12 +67,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SizedBox(height: 20),
                 Divider(color: Colors.deepPurple[100]),
                 const SizedBox(height: 4),
-<<<<<<< HEAD
-                
-=======
-
->>>>>>> 3949607 ( penambahan tombol navigasi, detail dan mekanisme penghubungan)
-                // TODO: 3. Buat bagian ProfileInfo yang berisi info profil
                 ProfileInfoItem(
                   icon: Icons.lock,
                   label: 'Pengguna',
@@ -114,9 +81,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   label: 'Nama',
                   value: fullName,
                   showEditIcon: isSignedIn,
-                  onEditPressed: () {
-                    debugPrint('Icon edit ditekan ...');
-                  },
+                  onEditPressed: () => debugPrint('Icon edit ditekan ...'),
                   iconColor: Colors.blue,
                 ),
                 const SizedBox(height: 4),
@@ -131,17 +96,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SizedBox(height: 4),
                 Divider(color: Colors.deepPurple[100]),
                 const SizedBox(height: 20),
-
-                // TODO: 4. Buat ProfileActions yang berisi TextButton sign in/out
                 isSignedIn
                     ? TextButton(
                         onPressed: signOut,
                         child: const Text('Sign Out'),
                       )
                     : TextButton(
-<<<<<<< HEAD
-                        onPressed: signIn,
-=======
                         onPressed: () async {
                           final result = await Navigator.push<bool>(
                             context,
@@ -149,11 +109,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               builder: (context) => const SignInScreen(),
                             ),
                           );
-                          if (result == true && mounted) {
-                            signIn();
-                          }
+                          if (result == true && mounted) signIn();
                         },
->>>>>>> 3949607 ( penambahan tombol navigasi, detail dan mekanisme penghubungan)
                         child: const Text('Sign In'),
                       ),
               ],
@@ -163,8 +120,4 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3949607 ( penambahan tombol navigasi, detail dan mekanisme penghubungan)
