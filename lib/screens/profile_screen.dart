@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:wisata_candi/screens/sign_in_screen.dart';
+>>>>>>> 3949607 ( penambahan tombol navigasi, detail dan mekanisme penghubungan)
 import 'package:wisata_candi/widgets/profile_info_item.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -53,13 +57,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: [
                         Container(
                           decoration: BoxDecoration(
+<<<<<<< HEAD
                             border: Border.all(color: Colors.deepPurple, width: 2),
+=======
+                            border: Border.all(
+                              color: Colors.deepPurple,
+                              width: 2,
+                            ),
+>>>>>>> 3949607 ( penambahan tombol navigasi, detail dan mekanisme penghubungan)
                             shape: BoxShape.circle,
                           ),
                           child: const CircleAvatar(
                             radius: 50,
+<<<<<<< HEAD
                             backgroundImage:
                                 AssetImage('images/placeholder_image.png'),
+=======
+                            backgroundImage: AssetImage(
+                              'images/placeholder_image.png',
+                            ),
+>>>>>>> 3949607 ( penambahan tombol navigasi, detail dan mekanisme penghubungan)
                           ),
                         ),
                         if (isSignedIn)
@@ -77,7 +94,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SizedBox(height: 20),
                 Divider(color: Colors.deepPurple[100]),
                 const SizedBox(height: 4),
+<<<<<<< HEAD
                 
+=======
+
+>>>>>>> 3949607 ( penambahan tombol navigasi, detail dan mekanisme penghubungan)
                 // TODO: 3. Buat bagian ProfileInfo yang berisi info profil
                 ProfileInfoItem(
                   icon: Icons.lock,
@@ -118,7 +139,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         child: const Text('Sign Out'),
                       )
                     : TextButton(
+<<<<<<< HEAD
                         onPressed: signIn,
+=======
+                        onPressed: () async {
+                          final result = await Navigator.push<bool>(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SignInScreen(),
+                            ),
+                          );
+                          if (result == true && mounted) {
+                            signIn();
+                          }
+                        },
+>>>>>>> 3949607 ( penambahan tombol navigasi, detail dan mekanisme penghubungan)
                         child: const Text('Sign In'),
                       ),
               ],
@@ -128,4 +163,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3949607 ( penambahan tombol navigasi, detail dan mekanisme penghubungan)

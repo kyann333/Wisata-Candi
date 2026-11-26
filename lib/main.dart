@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wisata_candi/screens/home_screen.dart';
-import 'package:wisata_candi/screens/profile_screen.dart'; // Bisa diganti sign_in_screen.dart jika diperlukan
-import 'package:wisata_candi/screens/home_screen.dart';
+import 'package:wisata_candi/screens/main_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,7 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Wisata Candi',
       theme: ThemeData(
-        // Pengaturan tema aplikasi 
         appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(color: Colors.deepPurple),
           titleTextStyle: TextStyle(
@@ -23,17 +21,12 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple).copyWith(
-          primary: Colors.deepPurple,
-          surface: Colors.deepPurple[50],
-        ),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+        ).copyWith(primary: Colors.deepPurple, surface: Colors.deepPurple[50]),
         useMaterial3: true,
       ),
-      // Menjadikan ProfileScreen sebagai halaman awal aplikasi (home)
-
-      // home: const ProfileScreen(),
-      home: const HomeScreen(),
-
+      home: const MainScreen(),
     );
   }
 }

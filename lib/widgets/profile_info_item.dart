@@ -38,6 +38,7 @@ class ProfileInfoItem extends StatelessWidget {
             ],
           ),
         ),
+<<<<<<< HEAD
         Expanded(
           child: Text(
             ': $value',
@@ -53,3 +54,12 @@ class ProfileInfoItem extends StatelessWidget {
     );
   }
 }
+=======
+        Expanded(child: Text(': $value', style: const TextStyle(fontSize: 18))),
+        if (showEditIcon)
+          InkWell(onTap: onEditPressed, child: const Icon(Icons.edit)),
+      ],
+    );
+  }
+}
+>>>>>>> 3949607 ( penambahan tombol navigasi, detail dan mekanisme penghubungan)
